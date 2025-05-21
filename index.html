@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balloon Popup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .popup {
+      display: none;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .popup .balloon {
+      display: inline-block;
+      background-color: #ffccdd;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup .balloon::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 10px solid transparent;
+      border-bottom-color: #ffccdd;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="togglePopup()">Open</button>
+
+  <div class="popup" id="popup">
+    <div class="balloon">Hey Milan, I love you</div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
